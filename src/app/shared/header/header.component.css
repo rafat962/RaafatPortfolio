@@ -1,0 +1,34 @@
+.hum-bottom,
+.hum-middle,
+.hum-top {
+  position: absolute;
+  width: 24px;
+  height: 1.5px;
+  right: 0;
+  top: 50%;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.hum-bottom {
+  transform: translateY(7px);
+}
+.hum-top {
+  transform: translateY(-7px);
+}
+
+.open .hum-bottom {
+  transform: rotate(45deg);
+  background-color: red;
+}
+.open .hum-top {
+  transform: rotate(-45deg);
+
+  background-color: blueviolet;
+}
+.open .hum-middle {
+  display: none;
+}
+.disseconde {
+  display: none;
+}

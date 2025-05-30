@@ -1,0 +1,5 @@
+dec:
+A React-based web GIS application using ArcGIS API and ArcGIS Online, featuring custom widgets to display and share specific map layers with clients.
+********************
+tech:
+(React.js - ArcGIS API for JavaScript - ArcGIS Online)

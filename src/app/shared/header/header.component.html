@@ -1,0 +1,177 @@
+<!-- container -->
+<div
+  class="flex items-center justify-center py-6 dark:text-white text-black h-28"
+>
+  <div
+    (click)="disapperSide()"
+    class="relative flex items-center justify-between p-6 w-[85vw] rounded-2xl outline outline-gray-600 outline-2 bg-gray-100 dark:bg-prim"
+  >
+    <!-- Name -->
+    <h1
+      class="text-lg select-none cursor-pointer hover:translate-x-[2px] trans hover:text-red-400"
+    >
+      Raafat Kamel
+    </h1>
+    <!-- links -->
+    <ul
+      class="hidden md:flex items-center justify-center space-x-5 text-md select-none"
+    >
+      <li
+        (click)="scrollTo('service')"
+        class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
+      >
+        SERVICE
+      </li>
+      <li
+        (click)="scrollTo('skills')"
+        class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
+      >
+        TECHNOLOGIES
+      </li>
+      <li
+        (click)="scrollTo('PORTFOLIO')"
+        class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
+      >
+        PORTFOLIO
+      </li>
+      <li
+        (click)="scrollTo('Contact')"
+        class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
+      >
+        CONTACT
+      </li>
+    </ul>
+    <!-- Dark Mode -->
+    <div
+      class="hidden md:flex flex-col justify-center p-2 cursor-pointer"
+      (click)="toggleDark()"
+    >
+      <!-- on dark mode case -->
+      <svg
+        class="dark:hidden"
+        width="16"
+        height="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="fill-slate-300"
+          d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"
+        />
+        <path
+          class="fill-slate-400"
+          d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
+        />
+      </svg>
+      <!-- on light mode case -->
+      <svg
+        class="hidden dark:block"
+        width="16"
+        height="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="fill-slate-400"
+          d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z"
+        />
+        <path
+          class="fill-slate-500"
+          d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"
+        />
+      </svg>
+    </div>
+    <!-- smalle screen menu -->
+    <div
+      (click)="openMenu($event)"
+      id="menu"
+      class="flex flex-col z-40 w-[24px] h-[24px] cursor-pointer p-2 relative items-center md:hidden"
+    >
+      <div class="hum-bottom bg-black dark:bg-white"></div>
+      <div class="hum-middle bg-black dark:bg-white"></div>
+      <div class="hum-top bg-black dark:bg-white"></div>
+    </div>
+  </div>
+</div>
+
+<!-- small screeen -->
+<div
+  [@slideToggle]="menuState"
+  id="seconde"
+  class="z-50 hidden flex items-center justify-start text-white absolute transition-all duration-150 top-0 left-0 flex-col space-y-4 h-full py-6 w-44 brightness-105 bg-gray-600 dark:bg-black md:hidden"
+>
+  <div class="flex items-center justify-between w-full px-4">
+    <h1 class="font-bold font-sans text-center">Raafat Kamel</h1>
+    <!-- Dark Mode -->
+    <div
+      class="flex flex-col justify-center p-2 cursor-pointer"
+      (click)="toggleDark()"
+    >
+      <!-- on dark mode case -->
+      <svg
+        class="dark:hidden"
+        width="16"
+        height="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="fill-slate-300"
+          d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"
+        />
+        <path
+          class="fill-slate-400"
+          d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
+        />
+      </svg>
+      <!-- on light mode case -->
+      <svg
+        class="hidden dark:block"
+        width="16"
+        height="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="fill-slate-400"
+          d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z"
+        />
+        <path
+          class="fill-slate-500"
+          d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div class="w-full h-1 bg-gray-500"></div>
+  <!-- links -->
+  <ul
+    class="flex flex-col items-start w-full justify-center space-y-5 text-md select-none text-sm px-4"
+  >
+    <li
+      (click)="scrollTo('service')"
+      class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans flex items-center justify-between w-full"
+    >
+      <p>SERVICE</p>
+      <i class="bx bx-right-arrow-alt text-xl"></i>
+    </li>
+    <li
+      (click)="scrollTo('skills')"
+      class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans flex items-center justify-between w-full"
+    >
+      <p>TECHNOLOGIES</p>
+      <i class="bx bx-right-arrow-alt text-xl"></i>
+    </li>
+    <li
+      (click)="scrollTo('PORTFOLIO')"
+      class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans flex items-center justify-between w-full"
+    >
+      <p>PORTFOLIO</p>
+      <i class="bx bx-right-arrow-alt text-xl"></i>
+    </li>
+    <li
+      (click)="scrollTo('Contact')"
+      class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans flex items-center justify-between w-full"
+    >
+      <p>CONTACT</p>
+      <i class="bx bx-right-arrow-alt text-xl"></i>
+    </li>
+  </ul>
+</div>

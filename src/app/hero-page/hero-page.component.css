@@ -1,0 +1,92 @@
+.bold {
+  font-weight: 500;
+}
+.pursh {
+  left: 50px;
+  top: 150px;
+  position: absolute;
+  width: 17rem;
+  height: 17rem;
+  background: rgba(158, 14, 187, 0.4);
+  filter: blur(100px);
+  border-radius: 80%;
+}
+.pursh2 {
+  right: 50px;
+  bottom: 150px;
+  position: absolute;
+  width: 17rem;
+  height: 17rem;
+  background: rgba(62, 16, 228, 0.459);
+  filter: blur(100px);
+  border-radius: 80%;
+}
+.pursh3 {
+  left: 50px;
+  bottom: 150px;
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  background: linear-gradient(
+    100deg,
+    rgba(62, 16, 228, 0.459),
+    rgba(255, 100, 100, 0.5)
+  );
+  filter: blur(100px);
+  border-radius: 80%;
+  pointer-events: none;
+}
+
+#aaf {
+  position: relative; /* Set positioning context for the pseudo-element */
+  z-index: 10;
+}
+
+#aaf::after {
+  content: ""; /* Required for pseudo-elements to appear */
+  background-color: #7091e6;
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  bottom: -1.5rem; /* Adjust position as needed */
+  left: -1rem; /* Adjust position as needed */
+  filter: blur(6px);
+  border-radius: 100%;
+  opacity: 50%;
+  z-index: -10;
+}
+#aaf::before {
+  content: ""; /* Required for pseudo-elements to appear */
+  background-color: #7091e6;
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  bottom: -1.5rem; /* Adjust position as needed */
+  right: -1rem; /* Adjust position as needed */
+  filter: blur(6px);
+  border-radius: 100%;
+  opacity: 50%;
+  z-index: -10;
+}
+
+.active {
+  background-color: rgb(20, 20, 122);
+  color: white;
+}
+/* Define the up-and-down animation */
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0); /* Start at the original position */
+  }
+  50% {
+    transform: translateY(-20px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Return to the original position */
+  }
+}
+
+/* Apply the animation to the element */
+.animate-up-down {
+  animation: upAndDown 3s ease-in-out infinite; /* 3s duration, smooth movement, infinite loop */
+}

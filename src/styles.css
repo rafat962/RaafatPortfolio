@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .trans {
+    @apply transition-all duration-200;
+  }
+  .hf {
+    @apply bg-gradient-to-r from-sec to-thr bg-clip-text text-transparent font-for font-semibold leading-tight tracking-wider;
+  }
+  .hs {
+    @apply bg-gradient-to-r from-sec to-thr bg-clip-text text-transparent font-for font-semibold leading-tight tracking-wider;
+  }
+  .af {
+    @apply after:absolute after:bg-white after:rounded-full after: after:w-24 after:h-24 after:opacity-5 after:-left-7;
+  }
+  .fc {
+    @apply flex flex-col items-center justify-center;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

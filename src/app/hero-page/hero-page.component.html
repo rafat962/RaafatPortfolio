@@ -1,0 +1,428 @@
+<!-- header -->
+<app-header></app-header>
+<!-- body -->
+<div class="flex flex-col w-full h-full select-none" [@divstate1]="state">
+  <!-- landing page -->
+  <div
+    class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-2 xl:py-0"
+  >
+    <div
+      class="flex flex-col xl:flex-row items-center justify-center md:justify-between w-[85vw] min-h-fit h-[calc(100vh-7.8rem)]"
+    >
+      <!-- text -->
+      <div
+        data-aos="flip-right"
+        class="flex flex-col items-center xl:items-start justify-center space-y-4 xl:space-y-12 pb-6"
+      >
+        <!-- dev -->
+        <div
+          class="flex flex-col space-y-2 text-[3rem] md:text-[4.1rem] select-none"
+        >
+          <h1 class="hf">FULL STACK</h1>
+          <h1 class="hf">DEVELOPER</h1>
+        </div>
+        <!-- me -->
+        <p
+          class="select-none max-w-[25rem] text-sm md:text-base dark:text-white text-black tracking-wide leading-6 text-center md:text-start"
+        >
+          i am Raafat -
+          <span class="text-blue-500">a Full-Stack and GIS Developer</span> with
+          a passion for creating impactful and efficient solutions.
+        </p>
+        <!-- button -->
+        <div class="relative group select-none cursor-pointer">
+          <div
+            class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-for to-sec opacity-50 group-hover:opacity-85 blur transition-all duration-500 group-hover:shadow-2xl group-hover:bg-gradient-to-l group-hover:shadow-for"
+          ></div>
+          <a
+            (click)="sctrolToProtoflio()"
+            class="font-thr font-semibold flex items-center justify-center px-6 py-3 text-white border-2 border-gray-100 rounded-2xl md:text-lg text-sm relative"
+          >
+            VIEW MY WORK
+          </a>
+        </div>
+      </div>
+      <!-- image -->
+      <div
+        data-aos="flip-right"
+        class="w-[100vw] xl:w-[80vw] h-full flex items-center justify-center xl:justify-end"
+      >
+        <img
+          class="w-[90%] md:w-[70%] h-[70%] md:h-[70%] object-cover animate-up-down"
+          src="./assets/heroPage/9.svg"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <!-- services -->
+  <div
+    id="service"
+    class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-14 md:py-24"
+  >
+    <div
+      class="flex flex-col items-start justify-start w-[85vw] h-fit space-y-14"
+    >
+      <!-- head -->
+      <h1
+        class="hf text-3xl md:text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
+      >
+        MY SERVICES
+      </h1>
+      <!-- Services -->
+      <div
+        class="relative w-full h-full flex flex-col items-center justify-start space-y-16"
+      >
+        <!-- card 1 -->
+        <div
+          *ngFor="let card of serviceCards"
+          [ngClass]="card.dir"
+          class="w-full flex items-center z-10 dark:bg-prim bg-white"
+        >
+          <div
+            class="hover:border-red-500 cursor-pointer hover:translate-x-1 hover:shadow-2xl hover:shadow-red-500 select-none trans z-10 flex flex-col items-start justify-start space-y-6 p-4 md:p-6 px-4 md:px-8 rounded-2xl border-2 border-gray-600 text-black dark:text-white w-full md:w-[48vw] bg-gradient-to-r from-white/5"
+          >
+            <div class="flex items-center justify-center space-x-4">
+              <!-- icon -->
+              <div class="w-12 h-12">
+                <img class="object-cover" [src]="card.img" alt="" />
+              </div>
+              <!-- text -->
+              <h1
+                class="text-2xl md:text-3xl text-wrap font-for font-bold text-blue-500"
+              >
+                {{ card.header }}
+              </h1>
+            </div>
+            <p class="max-w-xl">
+              {{ card.content }}
+            </p>
+          </div>
+        </div>
+        <!-- light -->
+        <div data-aos="fade-up-right" class="hidden dark:flex pursh z-20"></div>
+        <!-- line -->
+        <div
+          data-aos="fade-down"
+          class="absolute left-[50%] h-[67%] w-[2px] bg-gray-500 z-0"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <!-- Skills -->
+  <div
+    id="skills"
+    class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-6 md:py-24"
+  >
+    <div
+      class="relative flex flex-col items-start justify-start w-[85vw] h-fit space-y-4 md:space-y-14"
+    >
+      <!-- head -->
+      <h1
+        class="hf text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
+      >
+        SKILLS
+      </h1>
+      <div
+        data-aos="fade-down"
+        data-aos-anchor-placement="top-bottom"
+        class="flex flex-col text-white w-full items-center justify-center space-y-5 md:space-y-8"
+      >
+        <h1 class="text:xs md:text-xl tracking-widest">
+          The skills, tools and technologies i use :
+        </h1>
+        <!-- firs row -->
+        <div class="items-center justify-center space-x-4 hidden md:flex">
+          <!-- logo -->
+          <div class="w-14 h-14" *ngFor="let img of skilssRow1">
+            <img class="object-cover" [src]="img" alt="" />
+          </div>
+        </div>
+        <!-- sec row -->
+        <div class="items-center justify-center space-x-4 hidden md:flex">
+          <!-- logo -->
+          <div class="w-14 h-14" *ngFor="let img of skilssRow2">
+            <img class="object-cover" [src]="img" alt="" />
+          </div>
+        </div>
+        <!-- -------------------------------------- smale screen -->
+        <!-- firs row -->
+        <div class="items-center justify-center space-x-4 md:hidden flex">
+          <!-- logo -->
+          <div class="w-10 h-10" *ngFor="let img of skilssRow1.slice(0, 5)">
+            <img class="object-cover" [src]="img" alt="" />
+          </div>
+        </div>
+        <!-- seconde row -->
+        <div class="items-center justify-center space-x-4 md:hidden flex">
+          <!-- logo -->
+          <div class="w-10 h-10" *ngFor="let img of skilssRow1.slice(5, 9)">
+            <img class="object-cover" [src]="img" alt="" />
+          </div>
+        </div>
+        <!-- thr row -->
+        <div class="items-center justify-center space-x-4 md:hidden flex">
+          <!-- logo -->
+          <div class="w-10 h-10" *ngFor="let img of skilssRow2.slice(0, 4)">
+            <img class="object-cover" [src]="img" alt="" />
+          </div>
+        </div>
+        <!-- four row -->
+        <div class="items-center justify-center space-x-4 md:hidden flex">
+          <!-- logo -->
+          <div class="w-10 h-10" *ngFor="let img of skilssRow2.slice(4, 10)">
+            <img class="object-cover" [src]="img" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- light -->
+      <div data-aos="fade-up-left" class="hidden dark:flex pursh2 z-20"></div>
+    </div>
+    <!-- footer -->
+  </div>
+  <!-- protofoilio page -->
+  <div
+    id="PORTFOLIO"
+    class="relative w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-14 md:py-24"
+  >
+    <div
+      class="relative flex flex-col items-start justify-start w-[85vw] h-full space-y-10"
+    >
+      <!-- head -->
+      <h1
+        class="hf text-3xl md:text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
+      >
+        PORTFOLIO
+      </h1>
+      <div class="flex w-full items-center justify-center">
+        <mat-chip-listbox aria-label="Fish selection" #Bedslist>
+          <mat-chip-option selected (click)="pickProjects('Web Apps')"
+            >Web Apps</mat-chip-option
+          >
+          <mat-chip-option (click)="pickProjects('Python')"
+            >Python</mat-chip-option
+          >
+          <mat-chip-option (click)="pickProjects('ARCGIS')"
+            >ARCGIS</mat-chip-option
+          >
+          <mat-chip-option (click)="pickProjects('Mobile Apps')"
+            >Mobile Apps</mat-chip-option
+          >
+        </mat-chip-listbox>
+      </div>
+      <div class="w-full h-[97vh] fc space-y-6">
+        <div
+          id="cardList"
+          class="grid dr grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 md:grid-rows-3 xl:grid-rows-2 gap-8 h-full w-full overflow-auto"
+        >
+          <!-- card -->
+          <div
+            data-aos="fade-down"
+            data-aos-anchor-placement="top-bottom"
+            *ngFor="let item of projects"
+            [routerLink]="['/project', item.category, item.id]"
+            class="card flex flex-col items-center space-y-4 justify-start rounded-xl overflow-hidden border-2 border-gray-500 cursor-pointer hover:shadow-2xl hover:shadow-for trans pb-8 bg-white dark:bg-prim w-full xl:w-[24vw]"
+          >
+            <!-- img -->
+            <div class="w-full max-h-56 overflow-hidden object-cover">
+              <img
+                class="object-cover hover:scale-105 trans w-full h-56"
+                [src]="item.mainImg"
+                alt=""
+              />
+            </div>
+            <!-- text -->
+            <div
+              class="flex flex-col items-center justify-center w-full space-y-4"
+            >
+              <!-- see more -->
+              <div class="flex items-center justify-center w-full">
+                <div class="w-8 h-1 bg-gray-500"></div>
+              </div>
+              <!-- details -->
+              <div class="fc dark:text-white text-black space-y-2">
+                <h1
+                  class="font-for font-bold text-xl tracking-wider text-center"
+                >
+                  {{ item.name }}
+                </h1>
+                <p class="text-xs max-w-xl text-center px-2">
+                  ({{ item.tech.join(" - ") }})
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- numbering -->
+        <nav aria-label="Page navigation example">
+          <ul class="inline-flex -space-x-px text-base h-10 select-none">
+            <li (click)="back()">
+              <a
+                class="cursor-pointer flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white"
+                >Previous</a
+              >
+            </li>
+            <ng-container *ngFor="let num of generateArray(listNum)">
+              <li (click)="changeNum(num)" class="cursor-pointer">
+                <a
+                  [ngClass]="'step-' + num"
+                  class="stepnum flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white"
+                  >{{ num }}</a
+                >
+              </li>
+            </ng-container>
+            <li (click)="next()">
+              <a
+                class="cursor-pointer flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white"
+                >Next</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- light -->
+      <ng-container class="hidden md:flex">
+        <div
+          data-aos="fade-up-right"
+          class="hidden dark:flex pursh3 z-20"
+        ></div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- Contact -->
+  <div
+    id="Contact"
+    class="w-full h-fit border-b-2 border-b-gray-600 flex items-center justify-center py-8 md:py-10 xl:py-24"
+  >
+    <div
+      class="relative flex flex-col items-start justify-start w-[85vw] h-fit space-y-8 md:space-y-8 xl:space-y-14"
+    >
+      <!-- head -->
+      <h1
+        class="hf text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
+      >
+        Contact Me
+      </h1>
+      <div class="flex w-full h-fit items-center justify-center">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 md:gap-x-32 gap-y-5"
+          data-aos="flip-up"
+        >
+          <!-- github-->
+          <a
+            href="https://github.com/rafat962"
+            target="_blank"
+            class="flex items-center justify-start space-x-2 md:space-x-3 group"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxl-github text-sec text-2xl group-hover:text-gray-600 dark:group-hover:text-white trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-thr group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >https://github.com/rafat962</a
+            >
+          </a>
+          <!-- whatssapp-->
+          <a
+            href="https://wa.me/+201026820685"
+            target="_blank"
+            class="flex items-center justify-start space-x-2 md:space-x-3 group"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxl-whatsapp text-sec text-2xl group-hover:text-green-500 trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-thr group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >+201026820685</a
+            >
+          </a>
+          <!-- Facebook-->
+          <a
+            href="https://www.facebook.com/rafat.marhe1"
+            target="_blank"
+            class="flex items-center justify-start space-x-2 md:space-x-3 group"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxl-facebook-circle text-sec text-2xl group-hover:text-blue-600 trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-thr group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >Rafat Kamel Mohamed</a
+            >
+          </a>
+          <!-- Youtube-->
+          <a
+            href="https://www.youtube.com/@rafatkamel4884"
+            target="_blank"
+            class="flex items-center justify-start space-x-2 md:space-x-3 group"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxl-youtube text-sec text-2xl group-hover:text-red-600 trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-thr group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >Rafat Kamel</a
+            >
+          </a>
+          <!-- Gmail-->
+          <a
+            (click)="copyEmail()"
+            class="flex items-center justify-start space-x-3 group cursor-pointer"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxl-gmail text-sec text-2xl group-hover:text-red-600 trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-thr group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >rafatkamel5&#64;gmail.com</a
+            >
+          </a>
+          <!-- Gmail-->
+          <a
+            href="https://www.linkedin.com/in/rafat-kamel-1212b226b/"
+            target="_blank"
+            class="flex items-center justify-start space-x-3 group cursor-pointer"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxl-linkedin-square text-sec text-2xl group-hover:text-blue-600 trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-for group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >rafat kamel
+            </a>
+          </a>
+          <!-- PDF-->
+          <a
+            href="./assets/Rafat-Kamel-Mohamed-CV-20240624 (2).pdf"
+            target="_blank"
+            class="flex items-center justify-start space-x-3 group cursor-pointer"
+          >
+            <!-- icon -->
+            <i
+              class="bx bxs-file-pdf text-sec text-2xl group-hover:text-red-600 trans"
+            ></i>
+            <!-- link -->
+            <a
+              class="text-gray-90 dark:text-gray-200 font-for group-hover:text-gray-600 dark:group-hover:text-white trans text-sm md:text-xl"
+              >C.V
+            </a>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <app-footer></app-footer>
+</div>

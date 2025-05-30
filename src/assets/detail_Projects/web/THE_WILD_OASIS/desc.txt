@@ -1,0 +1,8 @@
+dec:
+A web-based cabin booking and management system for a hotel, where staff can track available cabins and manage reservations through an interactive map and custom-built widgets.
+********************
+tech:
+(React.js - ReactQuery)
+links:
+gti : https://github.com/rafat962/the-waild-oasis.git
+url : https://subtle-seahorse-193bff.netlify.app/login

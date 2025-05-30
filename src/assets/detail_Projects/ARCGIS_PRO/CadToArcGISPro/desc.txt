@@ -1,0 +1,4 @@
+desc:
+A data conversion project that transforms problematic CAD files into clean GIS datasets, uploads them to ArcGIS Portal, and creates an interactive web map for visualization and analysis.
+
+
