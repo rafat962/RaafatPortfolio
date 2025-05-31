@@ -213,9 +213,6 @@ export class HeroPageComponent implements OnInit {
   currentNum = 1;
   changeNum(num: number) {
     this.currentNum = num;
-    console.log('--------------');
-    console.log(this.currentNum);
-    console.log('--------------');
     // Fade out the current projects
     $('#cardList').fadeOut(250, () => {
       document.querySelectorAll('.stepnum')?.forEach((item: any) => {
@@ -257,7 +254,6 @@ export class HeroPageComponent implements OnInit {
         return;
       }
     } else {
-      console.log(this.listNum);
       if (this.currentNum < Math.ceil(this.listNum / 6)) {
         this.changeNum(this.currentNum + 1);
       } else {
@@ -266,6 +262,9 @@ export class HeroPageComponent implements OnInit {
     }
   }
   back() {
+    if (this.currentNum === 1) {
+      return;
+    }
     if (window.innerWidth < 767) {
       if (
         this.currentNum <= Math.ceil(this.listNum / 2) &&
@@ -276,8 +275,7 @@ export class HeroPageComponent implements OnInit {
         return;
       }
     } else {
-      console.log(this.listNum);
-      if (this.currentNum >= Math.ceil(this.listNum / 6)) {
+      if (this.currentNum >= Math.floor(this.listNum / 6)) {
         this.changeNum(this.currentNum - 1);
       } else {
         return;
@@ -290,8 +288,6 @@ export class HeroPageComponent implements OnInit {
     }); // Optional: Show a confirmation message
     const email = 'rafatkamel5@gmail.com';
     // Use the Clipboard API to copy the email
-    navigator.clipboard.writeText(email).then(() => {
-      console.log('Email copied to clipboard:', email);
-    });
+    navigator.clipboard.writeText(email).then(() => {});
   }
 }
