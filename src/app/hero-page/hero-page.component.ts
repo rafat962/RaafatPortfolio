@@ -140,6 +140,7 @@ export class HeroPageComponent implements OnInit {
     './assets/heroPage/logos/sql-server.png',
     './assets/heroPage/logos/Python.png',
     './assets/heroPage/logos/NextJs.png',
+    './assets/heroPage/logos/docker.svg',
   ];
   projects: Project[] = [];
   listNum = 0;

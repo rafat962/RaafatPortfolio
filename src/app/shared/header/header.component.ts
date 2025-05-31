@@ -37,14 +37,16 @@ export class HeaderComponent {
   }
   menuState = 'closed';
   constructor(private sharedService: SharedServiceService) {}
+  curState: any = 'dark';
   toggleDark() {
-    const currenState = localStorage?.getItem('darkMode')
-      ? localStorage?.getItem('darkMode')
-      : 'dark';
+    this.curState = localStorage?.getItem('darkMode') || 'dark';
+    const currenState = localStorage?.getItem('darkMode') || 'dark';
     if (currenState === 'dark') {
+      console.log('from dark');
       this.sharedService.darkState.next('sun');
       localStorage?.setItem('darkMode', 'sun');
     } else {
+      console.log('from light');
       this.sharedService.darkState.next('dark');
       localStorage?.setItem('darkMode', 'dark');
     }
@@ -54,6 +56,7 @@ export class HeaderComponent {
       document.getElementById('seconde')?.classList.add('hidden');
     }, 400);
   }
+
   scrollTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {

@@ -7,7 +7,7 @@
     @apply transition-all duration-200;
   }
   .hf {
-    @apply bg-gradient-to-r from-sec to-thr bg-clip-text text-transparent font-for font-semibold leading-tight tracking-wider;
+    @apply bg-gradient-to-r from-[#000000]  to-transparent bg-slate-600 dark:bg-gradient-to-r dark:from-sec dark:to-thr bg-clip-text text-transparent font-for font-semibold leading-tight tracking-wider;
   }
   .hs {
     @apply bg-gradient-to-r from-sec to-thr bg-clip-text text-transparent font-for font-semibold leading-tight tracking-wider;

@@ -10,7 +10,7 @@
         class="bx bx-arrow-back text-2xl cursor-pointer hover:-translate-x-[1.5px] trans hover:text-red-500"
       ></i>
       <h1
-        class="text-2xl font-thr tracking-wider hover:translate-y-[1.5px] hover:text-blue-500 cursor-pointer trans"
+        class="text-2xl text-center font-thr tracking-wider hover:translate-y-[1.5px] hover:text-blue-500 cursor-pointer trans"
       >
         {{ project.name }}
       </h1>
@@ -45,7 +45,7 @@
       data-interval="5000"
     >
       <!-- Carousel Wrapper -->
-      <div class="relative h-[80vh] overflow-hidden rounded-lg">
+      <div class="relative h-[100vh] overflow-hidden rounded-lg">
         <!-- Carousel Items -->
         <ng-container *ngFor="let item of project?.subImgs; let i = index">
           <div
@@ -55,7 +55,7 @@
           >
             <img
               [src]="item"
-              class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              class="absolute block w-full h-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="Slide {{ i + 1 }}"
             />
           </div>

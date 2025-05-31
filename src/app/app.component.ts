@@ -16,12 +16,14 @@ export class AppComponent implements OnInit {
 
   dark: any = 'dark';
   ngOnInit(): void {
+    this.dark = localStorage.getItem('darkMode') || 'dark';
     initFlowbite();
-    if (!localStorage.getItem('darkmode')) {
-      localStorage.setItem('darkmode', 'dark');
+    if (!localStorage.getItem('darkMode')) {
+      localStorage.setItem('darkMode', 'dark');
     }
     this.shareService.darkState.subscribe((data: any) => {
       this.dark = data;
+      console.log(22);
       console.log(this.dark);
     });
   }

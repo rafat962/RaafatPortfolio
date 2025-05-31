@@ -23,7 +23,7 @@ export class MobileProjectsService {
         './assets/detail_Projects/mobile/RK.MAPS/sub/7.webp',
         './assets/detail_Projects/mobile/RK.MAPS/sub/8.webp',
       ],
-      tech: ['AngularJS', 'Ionic Angular', 'Esri APIs'],
+      tech: ['Angular', 'Ionic Angular', 'Esri APIs'],
     },
   ];
   getOne(id: any) {

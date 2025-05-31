@@ -32,11 +32,11 @@
         <!-- button -->
         <div class="relative group select-none cursor-pointer">
           <div
-            class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-for to-sec opacity-50 group-hover:opacity-85 blur transition-all duration-500 group-hover:shadow-2xl group-hover:bg-gradient-to-l group-hover:shadow-for"
+            class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-800 dark:from-for dark:to-sec dark:opacity-50 group-hover:opacity-85 blur transition-all duration-500 group-hover:shadow-2xl group-hover:bg-gradient-to-l group-hover:shadow-for group-hover:dark:shadow-for"
           ></div>
           <a
             (click)="sctrolToProtoflio()"
-            class="font-thr font-semibold flex items-center justify-center px-6 py-3 text-white border-2 border-gray-100 rounded-2xl md:text-lg text-sm relative"
+            class="font-thr font-semibold flex items-center justify-center px-6 py-3 text-neutral-100 hover:text-white border-2 border-gray-100 rounded-2xl md:text-lg text-sm relative hover:brightness-200"
           >
             VIEW MY WORK
           </a>
@@ -76,10 +76,10 @@
         <div
           *ngFor="let card of serviceCards"
           [ngClass]="card.dir"
-          class="w-full flex items-center z-10 dark:bg-prim bg-white"
+          class="w-full flex items-center z-10 dark:bg-prim bg-[#F2F2F2]"
         >
           <div
-            class="hover:border-red-500 cursor-pointer hover:translate-x-1 hover:shadow-2xl hover:shadow-red-500 select-none trans z-10 flex flex-col items-start justify-start space-y-6 p-4 md:p-6 px-4 md:px-8 rounded-2xl border-2 border-gray-600 text-black dark:text-white w-full md:w-[48vw] bg-gradient-to-r from-white/5"
+            class="hover:dark:border-red-500 hover:border-blue-500 cursor-pointer hover:translate-x-1 hover:shadow-2xl hover:shadow-blue-500 hover:dark:shadow-red-500 select-none trans z-10 flex flex-col items-start justify-start space-y-6 p-4 md:p-6 px-4 md:px-8 rounded-2xl border-2 border-gray-600 text-black dark:text-white w-full md:w-[48vw] bg-gradient-to-r from-white/5"
           >
             <div class="flex items-center justify-center space-x-4">
               <!-- icon -->
@@ -125,22 +125,30 @@
       <div
         data-aos="fade-down"
         data-aos-anchor-placement="top-bottom"
-        class="flex flex-col text-white w-full items-center justify-center space-y-5 md:space-y-8"
+        class="flex flex-col text-[#000000] dark:text-white w-full items-center justify-center space-y-5 md:space-y-8 select-none"
       >
         <h1 class="text:xs md:text-xl tracking-widest">
           The skills, tools and technologies i use :
         </h1>
         <!-- firs row -->
-        <div class="items-center justify-center space-x-4 hidden md:flex">
+        <div
+          class="items-center justify-center space-x-4 hidden md:flex select-none"
+        >
           <!-- logo -->
-          <div class="w-14 h-14" *ngFor="let img of skilssRow1">
+          <div
+            class="w-14 h-14 hover:-translate-y-1 cursor-pointer trans"
+            *ngFor="let img of skilssRow1"
+          >
             <img class="object-cover" [src]="img" alt="" />
           </div>
         </div>
         <!-- sec row -->
         <div class="items-center justify-center space-x-4 hidden md:flex">
           <!-- logo -->
-          <div class="w-14 h-14" *ngFor="let img of skilssRow2">
+          <div
+            class="w-14 h-14 hover:-translate-y-1 cursor-pointer trans"
+            *ngFor="let img of skilssRow2"
+          >
             <img class="object-cover" [src]="img" alt="" />
           </div>
         </div>
@@ -148,28 +156,40 @@
         <!-- firs row -->
         <div class="items-center justify-center space-x-4 md:hidden flex">
           <!-- logo -->
-          <div class="w-10 h-10" *ngFor="let img of skilssRow1.slice(0, 5)">
+          <div
+            class="w-10 h-10 hover:-translate-y-1 cursor-pointer trans"
+            *ngFor="let img of skilssRow1.slice(0, 5)"
+          >
             <img class="object-cover" [src]="img" alt="" />
           </div>
         </div>
         <!-- seconde row -->
         <div class="items-center justify-center space-x-4 md:hidden flex">
           <!-- logo -->
-          <div class="w-10 h-10" *ngFor="let img of skilssRow1.slice(5, 9)">
+          <div
+            class="w-10 h-10 hover:-translate-y-1 cursor-pointer trans"
+            *ngFor="let img of skilssRow1.slice(5, 9)"
+          >
             <img class="object-cover" [src]="img" alt="" />
           </div>
         </div>
         <!-- thr row -->
         <div class="items-center justify-center space-x-4 md:hidden flex">
           <!-- logo -->
-          <div class="w-10 h-10" *ngFor="let img of skilssRow2.slice(0, 4)">
+          <div
+            class="w-10 h-10 hover:-translate-y-1 cursor-pointer trans"
+            *ngFor="let img of skilssRow2.slice(0, 4)"
+          >
             <img class="object-cover" [src]="img" alt="" />
           </div>
         </div>
         <!-- four row -->
         <div class="items-center justify-center space-x-4 md:hidden flex">
           <!-- logo -->
-          <div class="w-10 h-10" *ngFor="let img of skilssRow2.slice(4, 10)">
+          <div
+            class="w-10 h-10 hover:-translate-y-1 cursor-pointer trans"
+            *ngFor="let img of skilssRow2.slice(4, 10)"
+          >
             <img class="object-cover" [src]="img" alt="" />
           </div>
         </div>
@@ -223,9 +243,9 @@
             class="card flex flex-col items-center space-y-4 justify-start rounded-xl overflow-hidden border-2 border-gray-500 cursor-pointer hover:shadow-2xl hover:shadow-for trans pb-8 bg-white dark:bg-prim w-full xl:w-[24vw]"
           >
             <!-- img -->
-            <div class="w-full max-h-56 overflow-hidden object-cover">
+            <div class="w-full h-96 overflow-hidden object-cover">
               <img
-                class="object-cover hover:scale-105 trans w-full h-56"
+                class="object-cover hover:scale-105 trans w-full h-full"
                 [src]="item.mainImg"
                 alt=""
               />
@@ -315,7 +335,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxl-github text-sec text-2xl group-hover:text-gray-600 dark:group-hover:text-white trans"
+              class="bx bxl-github text-sec text-2xl group-hover:text-gray-600 dark:group-hover:text-white trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
@@ -331,7 +351,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxl-whatsapp text-sec text-2xl group-hover:text-green-500 trans"
+              class="bx bxl-whatsapp text-sec text-2xl group-hover:text-green-500 trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
@@ -347,7 +367,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxl-facebook-circle text-sec text-2xl group-hover:text-blue-600 trans"
+              class="bx bxl-facebook-circle text-sec text-2xl group-hover:text-blue-600 trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
@@ -363,7 +383,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxl-youtube text-sec text-2xl group-hover:text-red-600 trans"
+              class="bx bxl-youtube text-sec text-2xl group-hover:text-red-600 trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
@@ -378,7 +398,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxl-gmail text-sec text-2xl group-hover:text-red-600 trans"
+              class="bx bxl-gmail text-sec text-2xl group-hover:text-red-600 trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
@@ -394,7 +414,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxl-linkedin-square text-sec text-2xl group-hover:text-blue-600 trans"
+              class="bx bxl-linkedin-square text-sec text-2xl group-hover:text-blue-600 trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
@@ -410,7 +430,7 @@
           >
             <!-- icon -->
             <i
-              class="bx bxs-file-pdf text-sec text-2xl group-hover:text-red-600 trans"
+              class="bx bxs-file-pdf text-sec text-2xl group-hover:text-red-600 trans group-hover:scale-110"
             ></i>
             <!-- link -->
             <a
