@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { SharedServiceService } from '../shared-service.service';
 import {
   trigger,
@@ -9,11 +9,12 @@ import {
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import AOS from 'aos';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 declare var $: any;
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   animations: [
@@ -26,6 +27,15 @@ declare var $: any;
 })
 export class HeaderComponent {
   ngOnInit(): void {
+    // get lan
+    let lan = JSON.parse(localStorage.getItem('lan')!) || 'en';
+    this.translateService.use(lan);
+    this.curLan = lan;
+    if (lan === 'en') {
+      this.curLanSrc = './assets/lan/English.png';
+    } else if (lan === 'ar') {
+      this.curLanSrc = './assets/lan/Arabic.png';
+    }
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     AOS.init({
@@ -36,17 +46,18 @@ export class HeaderComponent {
     });
   }
   menuState = 'closed';
-  constructor(private sharedService: SharedServiceService) {}
+  constructor(
+    private sharedService: SharedServiceService,
+    private translateService: TranslateService
+  ) {}
   curState: any = 'dark';
   toggleDark() {
     this.curState = localStorage?.getItem('darkMode') || 'dark';
     const currenState = localStorage?.getItem('darkMode') || 'dark';
     if (currenState === 'dark') {
-      console.log('from dark');
       this.sharedService.darkState.next('sun');
       localStorage?.setItem('darkMode', 'sun');
     } else {
-      console.log('from light');
       this.sharedService.darkState.next('dark');
       localStorage?.setItem('darkMode', 'dark');
     }
@@ -83,5 +94,24 @@ export class HeaderComponent {
     setTimeout(() => {
       document.getElementById('seconde')?.classList.add('hidden');
     }, 400);
+  }
+
+  // lan
+  curLanSrc = './assets/lan/English.png';
+  curLan = 'en';
+  @ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
+  ToggleLan(lan: any) {
+    this.dropdownMenu.nativeElement?.classList.add('hidden');
+    this.curLan = lan;
+    localStorage.setItem('lan', JSON.stringify(lan));
+    if (lan === 'en') {
+      this.curLanSrc = './assets/lan/English.png';
+    } else if (lan === 'ar') {
+      this.curLanSrc = './assets/lan/Arabic.png';
+    }
+    this.translateService.use(lan);
+  }
+  buttonClick() {
+    this.dropdownMenu.nativeElement.classList.toggle('hidden');
   }
 }

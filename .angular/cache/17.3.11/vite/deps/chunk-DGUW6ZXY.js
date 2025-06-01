@@ -7,13 +7,15 @@ import {
 } from "./chunk-OEX5Q6OG.js";
 import {
   MatCommonModule
-} from "./chunk-N76KVD56.js";
+} from "./chunk-OFA3WED5.js";
 import {
-  Directionality,
   ObserversModule,
   Platform,
   coerceBooleanProperty
-} from "./chunk-CGP2GUJI.js";
+} from "./chunk-VQXGVG4Y.js";
+import {
+  Directionality
+} from "./chunk-NXFHWI5I.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -1626,4 +1628,4 @@ export {
   MatFormField,
   MatFormFieldModule
 };
-//# sourceMappingURL=chunk-F2IHC6RJ.js.map
+//# sourceMappingURL=chunk-DGUW6ZXY.js.map

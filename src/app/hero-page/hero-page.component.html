@@ -7,7 +7,8 @@
     class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-2 xl:py-0"
   >
     <div
-      class="flex flex-col xl:flex-row items-center justify-center md:justify-between w-[85vw] min-h-fit h-[calc(100vh-7.8rem)]"
+      [ngClass]="currentLang === 'ar' ? 'xl:flex-row-reverse' : 'xl:flex-row'"
+      class="flex flex-col items-center justify-center md:justify-between w-[85vw] min-h-fit h-[calc(100vh-7.8rem)]"
     >
       <!-- text -->
       <div
@@ -18,16 +19,25 @@
         <div
           class="flex flex-col space-y-2 text-[3rem] md:text-[4.1rem] select-none"
         >
-          <h1 class="hf">FULL STACK</h1>
-          <h1 class="hf">DEVELOPER</h1>
+          <h1 [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'" class="hf">
+            {{ "FULL STACK" | translate }}
+          </h1>
+          <h1 [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'" class="hf">
+            {{ "DEVELOPER" | translate }}
+          </h1>
         </div>
         <!-- me -->
         <p
+          [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
           class="select-none max-w-[25rem] text-sm md:text-base dark:text-white text-black tracking-wide leading-6 text-center md:text-start"
         >
-          i am Raafat -
-          <span class="text-blue-500">a Full-Stack and GIS Developer</span> with
-          a passion for creating impactful and efficient solutions.
+          <span class="text-blue-500">{{
+            "i am Raafat - a Full-Stack and GIS Developer" | translate
+          }}</span
+          >{{
+            "with a passion for creating impactful and efficient solutions."
+              | translate
+          }}
         </p>
         <!-- button -->
         <div class="relative group select-none cursor-pointer">
@@ -38,13 +48,14 @@
             (click)="sctrolToProtoflio()"
             class="font-thr font-semibold flex items-center justify-center px-6 py-3 text-neutral-100 hover:text-white border-2 border-gray-100 rounded-2xl md:text-lg text-sm relative hover:brightness-200"
           >
-            VIEW MY WORK
+            {{ "VIEW MY WORK" | translate }}
           </a>
         </div>
       </div>
       <!-- image -->
       <div
-        class="w-[100vw] xl:w-[80vw] h-full flex items-center justify-center xl:justify-end"
+        [ngClass]="currentLang === 'ar' ? 'xl:justify-start' : 'xl:justify-end'"
+        class="w-[100vw] xl:w-[80vw] h-full flex items-center justify-center"
       >
         <img
           class="w-[90%] md:w-[70%] h-[70%] md:h-[70%] object-cover animate-up-down"
@@ -60,13 +71,14 @@
     class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-14 md:py-24"
   >
     <div
-      class="flex flex-col items-start justify-start w-[85vw] h-fit space-y-14"
+      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+      class="flex flex-col justify-start w-[85vw] h-fit space-y-14"
     >
       <!-- head -->
       <h1
         class="hf text-3xl md:text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
       >
-        MY SERVICES
+        {{ "MY SERVICES" | translate }}
       </h1>
       <!-- Services -->
       <div
@@ -79,7 +91,8 @@
           class="w-full flex items-center z-10 dark:bg-prim bg-[#F2F2F2]"
         >
           <div
-            class="hover:dark:border-red-500 hover:border-blue-500 cursor-pointer hover:translate-x-1 hover:shadow-2xl hover:shadow-blue-500 hover:dark:shadow-red-500 select-none trans z-10 flex flex-col items-start justify-start space-y-6 p-4 md:p-6 px-4 md:px-8 rounded-2xl border-2 border-gray-600 text-black dark:text-white w-full md:w-[48vw] bg-gradient-to-r from-white/5"
+            [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+            class="hover:dark:border-red-500 hover:border-blue-500 cursor-pointer hover:translate-x-1 hover:shadow-2xl hover:shadow-blue-500 hover:dark:shadow-red-500 select-none trans z-10 flex flex-col justify-start space-y-6 p-4 md:p-6 px-4 md:px-8 rounded-2xl border-2 border-gray-600 text-black dark:text-white w-full md:w-[48vw] bg-gradient-to-r from-white/5"
           >
             <div class="flex items-center justify-center space-x-4">
               <!-- icon -->
@@ -88,13 +101,14 @@
               </div>
               <!-- text -->
               <h1
+                [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
                 class="text-2xl md:text-3xl text-wrap font-for font-bold text-blue-500"
               >
-                {{ card.header }}
+                {{ card.header | translate }}
               </h1>
             </div>
-            <p class="max-w-xl">
-              {{ card.content }}
+            <p [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'" class="max-w-xl">
+              {{ card.content | translate }}
             </p>
           </div>
         </div>
@@ -114,21 +128,25 @@
     class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-6 md:py-24"
   >
     <div
+      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
       class="relative flex flex-col items-start justify-start w-[85vw] h-fit space-y-4 md:space-y-14"
     >
       <!-- head -->
       <h1
         class="hf text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
       >
-        SKILLS
+        {{ "SKILLS" | translate }}
       </h1>
       <div
         data-aos="fade-down"
         data-aos-anchor-placement="top-bottom"
         class="flex flex-col text-[#000000] dark:text-white w-full items-center justify-center space-y-5 md:space-y-8 select-none"
       >
-        <h1 class="text:xs md:text-xl tracking-widest">
-          The skills, tools and technologies i use :
+        <h1
+          [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+          class="text:xs md:text-xl tracking-widest"
+        >
+          {{ "The skills, tools and technologies i use :" | translate }}
         </h1>
         <!-- firs row -->
         <div
@@ -205,28 +223,29 @@
     class="relative w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-14 md:py-24"
   >
     <div
+      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
       class="relative flex flex-col items-start justify-start w-[85vw] h-full space-y-10"
     >
       <!-- head -->
       <h1
         class="hf text-3xl md:text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
       >
-        PORTFOLIO
+        {{ "PORTFOLIO" | translate }}
       </h1>
       <div class="flex w-full items-center justify-center">
         <mat-chip-listbox aria-label="Fish selection" #Bedslist>
-          <mat-chip-option selected (click)="pickProjects('Web Apps')"
-            >Web Apps</mat-chip-option
-          >
-          <mat-chip-option (click)="pickProjects('Python')"
-            >Python</mat-chip-option
-          >
-          <mat-chip-option (click)="pickProjects('ARCGIS')"
-            >ARCGIS</mat-chip-option
-          >
-          <mat-chip-option (click)="pickProjects('Mobile Apps')"
-            >Mobile Apps</mat-chip-option
-          >
+          <mat-chip-option selected (click)="pickProjects('Web Apps')">{{
+            "Web Apps" | translate
+          }}</mat-chip-option>
+          <mat-chip-option (click)="pickProjects('Python')">{{
+            "Python" | translate
+          }}</mat-chip-option>
+          <mat-chip-option (click)="pickProjects('ARCGIS')">{{
+            "ARCGIS" | translate
+          }}</mat-chip-option>
+          <mat-chip-option (click)="pickProjects('Mobile Apps')">{{
+            "Mobile Apps" | translate
+          }}</mat-chip-option>
         </mat-chip-listbox>
       </div>
       <div class="w-full h-[97vh] fc space-y-6">
@@ -314,13 +333,14 @@
     class="w-full h-fit border-b-2 border-b-gray-600 flex items-center justify-center py-8 md:py-10 xl:py-24"
   >
     <div
+      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
       class="relative flex flex-col items-start justify-start w-[85vw] h-fit space-y-8 md:space-y-8 xl:space-y-14"
     >
       <!-- head -->
       <h1
         class="hf text-4xl hover:text-blue-500 hover:translate-x-1 trans cursor-pointer"
       >
-        Contact Me
+        {{ "Contact Me" | translate }}
       </h1>
       <div class="flex w-full h-fit items-center justify-center">
         <div

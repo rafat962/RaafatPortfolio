@@ -23,8 +23,6 @@ export class AppComponent implements OnInit {
     }
     this.shareService.darkState.subscribe((data: any) => {
       this.dark = data;
-      console.log(22);
-      console.log(this.dark);
     });
   }
 }

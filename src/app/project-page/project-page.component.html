@@ -26,9 +26,10 @@
       class="flex items-center justify-center w-full mx-4 md:w-[70vw] border-dashed border-2 border-gray-600 rounded-3xl p-2 md:p-8 h-fit cursor-pointer hover:translate-x hover:-translate-y-1 hover:shadow-xl hover:shadow-red-500 trans"
     >
       <p
-        class="dark:text-white text-black text-wrap text-start text-base font-thr tracking-wider leading-8"
+        [ngClass]="currentLang === 'ar' ? 'text-end' : 'text-start'"
+        class="dark:text-white text-black text-wrap text-base font-thr tracking-wider leading-8"
       >
-        {{ project.desc }}
+        {{ project.desc | translate }}
       </p>
     </div>
   </div>
@@ -45,7 +46,7 @@
       data-interval="5000"
     >
       <!-- Carousel Wrapper -->
-      <div class="relative h-[100vh] overflow-hidden rounded-lg">
+      <div class="relative h-[70vh] md:h-[100vh] overflow-hidden rounded-lg">
         <!-- Carousel Items -->
         <ng-container *ngFor="let item of project?.subImgs; let i = index">
           <div

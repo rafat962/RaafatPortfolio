@@ -1,5 +1,4 @@
 import {
-  BidiModule,
   ENTER,
   HighContrastModeDetector,
   Platform,
@@ -13,7 +12,10 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-CGP2GUJI.js";
+} from "./chunk-VQXGVG4Y.js";
+import {
+  BidiModule
+} from "./chunk-NXFHWI5I.js";
 import {
   DOCUMENT
 } from "./chunk-VBIE6LKH.js";
@@ -2298,4 +2300,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-N76KVD56.js.map
+//# sourceMappingURL=chunk-OFA3WED5.js.map

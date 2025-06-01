@@ -2,10 +2,9 @@ import {
   CdkScrollableModule,
   ScrollDispatcher,
   ViewportRuler
-} from "./chunk-TR2ZJYNK.js";
+} from "./chunk-KSD3ZDKF.js";
 import "./chunk-6GFKQZYB.js";
 import {
-  Directionality,
   _getEventTarget,
   _getShadowRoot,
   coerceArray,
@@ -14,7 +13,10 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-CGP2GUJI.js";
+} from "./chunk-VQXGVG4Y.js";
+import {
+  Directionality
+} from "./chunk-NXFHWI5I.js";
 import {
   DOCUMENT
 } from "./chunk-VBIE6LKH.js";

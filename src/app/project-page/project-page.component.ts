@@ -16,10 +16,16 @@ import {
   animate,
 } from '@angular/animations';
 import AOS from 'aos';
+import {
+  LangChangeEvent,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-project-page',
   standalone: true,
-  imports: [FooterComponent, RouterModule, CommonModule],
+  imports: [FooterComponent, RouterModule, CommonModule, TranslateModule],
   templateUrl: './project-page.component.html',
   styleUrl: './project-page.component.css',
   animations: [
@@ -48,10 +54,19 @@ export class ProjectPageComponent implements OnInit {
     private webProjects: WEBProjectsService,
     private pythonProject: PythonProjectsService,
     private arcgisProjects: ArcGisProjectsService,
-    private mobileApps: MobileProjectsService
+    private mobileApps: MobileProjectsService,
+    private translate: TranslateService
   ) {}
   state = 'now';
+  currentLang: string = '';
+  private langChangeSub!: Subscription;
   ngOnInit(): void {
+    // Subscribe to language change
+    this.langChangeSub = this.translate.onLangChange.subscribe(
+      (event: LangChangeEvent) => {
+        this.currentLang = event.lang;
+      }
+    );
     AOS.init({
       offset: 0,
       duration: 600,

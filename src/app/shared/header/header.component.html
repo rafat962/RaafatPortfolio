@@ -4,13 +4,14 @@
 >
   <div
     (click)="disapperSide()"
+    [ngClass]="curLan === 'ar' ? 'flex-row-reverse' : ''"
     class="relative flex items-center justify-between p-6 w-[85vw] rounded-2xl outline outline-gray-600 outline-2 bg-gray-100 dark:bg-prim"
   >
     <!-- Name -->
     <h1
       class="text-lg select-none cursor-pointer hover:translate-x-[2px] trans hover:text-red-400"
     >
-      Raafat Kamel
+      {{ "Raafat Kamel" | translate }}
     </h1>
     <!-- links -->
     <ul
@@ -20,64 +21,109 @@
         (click)="scrollTo('service')"
         class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
       >
-        SERVICE
+        {{ "SERVICE" | translate }}
       </li>
       <li
         (click)="scrollTo('skills')"
         class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
       >
-        TECHNOLOGIES
+        {{ "TECHNOLOGIES" | translate }}
       </li>
       <li
         (click)="scrollTo('PORTFOLIO')"
         class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
       >
-        PORTFOLIO
+        {{ "PORTFOLIO" | translate }}
       </li>
       <li
         (click)="scrollTo('Contact')"
         class="font-thr cursor-pointer hover:text-blue-500 hover:-translate-x-[1.2px] trans"
       >
-        CONTACT
+        {{ "CONTACT" | translate }}
       </li>
     </ul>
-    <!-- Dark Mode -->
-    <div
-      class="hidden md:flex flex-col justify-center p-2 cursor-pointer"
-      (click)="toggleDark()"
-    >
-      <!-- on dark mode case -->
-      <svg
-        class="hidden dark:block"
-        width="16"
-        height="16"
-        xmlns="http://www.w3.org/2000/svg"
+    <!-- toggle -->
+    <div class="flex items-center justify-center">
+      <!-- Dark Mode -->
+      <div
+        class="hidden md:flex flex-col justify-center p-2 cursor-pointer"
+        (click)="toggleDark()"
       >
-        <path
-          class="fill-slate-300"
-          d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"
-        />
-        <path
-          class="fill-slate-400"
-          d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
-        />
-      </svg>
-      <!-- on light mode case -->
-      <svg
-        class="dark:hidden"
-        width="16"
-        height="16"
-        xmlns="http://www.w3.org/2000/svg"
+        <!-- on dark mode case -->
+        <svg
+          class="hidden dark:block"
+          width="16"
+          height="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="fill-slate-300"
+            d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"
+          />
+          <path
+            class="fill-slate-400"
+            d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
+          />
+        </svg>
+        <!-- on light mode case -->
+        <svg
+          class="dark:hidden"
+          width="16"
+          height="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="fill-slate-400"
+            d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z"
+          />
+          <path
+            class="fill-slate-500"
+            d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"
+          />
+        </svg>
+      </div>
+      <!-- lan -->
+      <div
+        class="relative hidden md:flex flex-col justify-center cursor-pointer"
       >
-        <path
-          class="fill-slate-400"
-          d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z"
-        />
-        <path
-          class="fill-slate-500"
-          d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"
-        />
-      </svg>
+        <button
+          (click)="buttonClick()"
+          class="flex items-center space-x-5 text-white bg-white-700 font-medium rounded-full text-sm px-5 py-1 text-center dark:bg-white-600"
+          type="button"
+        >
+          <img class="w-9 h-9" [src]="curLanSrc" alt="" />
+        </button>
+        <!-- Dropdown menu -->
+        <div
+          #dropdownMenu
+          id="dropdownMenu"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-36 dark:bg-gray-700 absolute -bottom-[5.5rem]"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownDefaultButton"
+          >
+            <li
+              (click)="ToggleLan('en')"
+              class="flex items-center justify-start space-x-1 hover:bg-gray-100 dark:hover:bg-gray-600 px-2"
+            >
+              <img class="w-9 h-9" src="./assets/lan/English.png" alt="" />
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >English</a
+              >
+            </li>
+            <li
+              class="flex items-center justify-start space-x-1 hover:bg-gray-100 dark:hover:bg-gray-600 px-2"
+              (click)="ToggleLan('ar')"
+            >
+              <img class="w-9 h-9" src="./assets/lan/Arabic.png" alt="" />
+              <a href="#" class="block px-4 py-2 dark:hover:text-white"
+                >Arabic</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <!-- smalle screen menu -->
     <div

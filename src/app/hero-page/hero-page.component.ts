@@ -18,6 +18,12 @@ import {
   animate,
 } from '@angular/animations';
 import AOS from 'aos';
+import {
+  LangChangeEvent,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 declare var $: any;
 @Component({
   selector: 'app-hero-page',
@@ -28,6 +34,7 @@ declare var $: any;
     Matrial,
     FooterComponent,
     RouterModule,
+    TranslateModule,
   ],
   templateUrl: './hero-page.component.html',
   styleUrl: './hero-page.component.css',
@@ -56,7 +63,8 @@ export class HeroPageComponent implements OnInit {
     private pythonProjects: PythonProjectsService,
     private mobileAppsProjects: MobileProjectsService,
     private tost: ToastrService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private translate: TranslateService
   ) {}
   sctrolToProtoflio() {
     const element = document.getElementById('PORTFOLIO');
@@ -65,6 +73,8 @@ export class HeroPageComponent implements OnInit {
     }
   }
   state = 'now';
+  currentLang: string = '';
+  private langChangeSub!: Subscription;
   ngOnInit(): void {
     AOS.init({
       offset: 0,
@@ -89,6 +99,18 @@ export class HeroPageComponent implements OnInit {
       this.projects = this.webProjcts.WebProjects.slice(0, 6);
     }
     this.listNum = this.webProjcts.WebProjects.length;
+    // Subscribe to language change
+    this.langChangeSub = this.translate.onLangChange.subscribe(
+      (event: LangChangeEvent) => {
+        this.currentLang = event.lang;
+      }
+    );
+  }
+  ngOnDestroy(): void {
+    // Clean up subscription
+    if (this.langChangeSub) {
+      this.langChangeSub.unsubscribe();
+    }
   }
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
