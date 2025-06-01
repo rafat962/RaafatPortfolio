@@ -38,7 +38,7 @@ export class ArcGisProjectsService {
       tech: ['ArcGIS Pro', 'AutoCad'],
     },
     {
-      id: 18,
+      id: 19,
       category: 'ArcGIS',
       name: 'Data Collection with ArcGIS Online',
       desc: 'This project involves uploading field data using the Field Maps application, enabling efficient data collection and real-time syncing with GIS systems for enhanced spatial analysis and decision-making.',
