@@ -61,6 +61,7 @@ export class ProjectPageComponent implements OnInit {
   currentLang: string = '';
   private langChangeSub!: Subscription;
   ngOnInit(): void {
+    this.currentLang = JSON.parse(localStorage.getItem('lan')!) || 'en';
     // Subscribe to language change
     this.langChangeSub = this.translate.onLangChange.subscribe(
       (event: LangChangeEvent) => {
@@ -110,6 +111,12 @@ export class ProjectPageComponent implements OnInit {
         }
       }
     });
+  }
+  ngOnDestroy(): void {
+    // Clean up subscription
+    if (this.langChangeSub) {
+      this.langChangeSub.unsubscribe();
+    }
   }
   carousel!: Carousel;
   ngAfterViewInit(): void {

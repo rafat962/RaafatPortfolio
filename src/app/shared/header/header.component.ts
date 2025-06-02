@@ -35,6 +35,8 @@ export class HeaderComponent {
       this.curLanSrc = './assets/lan/English.png';
     } else if (lan === 'ar') {
       this.curLanSrc = './assets/lan/Arabic.png';
+    } else if (lan === 'fr') {
+      this.curLanSrc = './assets/lan/French.png';
     }
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -100,18 +102,25 @@ export class HeaderComponent {
   curLanSrc = './assets/lan/English.png';
   curLan = 'en';
   @ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
+  @ViewChild('dropdownMenu2') dropdownMenu2!: ElementRef;
   ToggleLan(lan: any) {
     this.dropdownMenu.nativeElement?.classList.add('hidden');
+    this.dropdownMenu2.nativeElement?.classList.add('hidden');
     this.curLan = lan;
     localStorage.setItem('lan', JSON.stringify(lan));
     if (lan === 'en') {
       this.curLanSrc = './assets/lan/English.png';
     } else if (lan === 'ar') {
       this.curLanSrc = './assets/lan/Arabic.png';
+    } else if (lan === 'fr') {
+      this.curLanSrc = './assets/lan/French.png';
     }
     this.translateService.use(lan);
   }
   buttonClick() {
     this.dropdownMenu.nativeElement.classList.toggle('hidden');
+  }
+  buttonClick2() {
+    this.dropdownMenu2.nativeElement.classList.toggle('hidden');
   }
 }

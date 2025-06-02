@@ -76,6 +76,7 @@ export class HeroPageComponent implements OnInit {
   currentLang: string = '';
   private langChangeSub!: Subscription;
   ngOnInit(): void {
+    this.currentLang = JSON.parse(localStorage.getItem('lan')!) || 'en';
     AOS.init({
       offset: 0,
       duration: 600,

@@ -26,6 +26,7 @@
       class="flex items-center justify-center w-full mx-4 md:w-[70vw] border-dashed border-2 border-gray-600 rounded-3xl p-2 md:p-8 h-fit cursor-pointer hover:translate-x hover:-translate-y-1 hover:shadow-xl hover:shadow-red-500 trans"
     >
       <p
+        [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
         [ngClass]="currentLang === 'ar' ? 'text-end' : 'text-start'"
         class="dark:text-white text-black text-wrap text-base font-thr tracking-wider leading-8"
       >

@@ -1,0 +1,51 @@
+{
+  "FULL STACK": "Développeur Full Stack",
+  "Raafat Kamel": "Raafat Kamel",
+  "TECHNOLOGIES": "Technologies",
+  "CONTACT": "Contact",
+  "PORTFOLIO": "Portfolio",
+  "SERVICE": "Services",
+  "DEVELOPER": "",
+  "i am Raafat - a Full-Stack and GIS Developer": "Je suis Raafat - développeur Full-Stack et SIG",
+  "with a passion for creating impactful and efficient solutions.": "avec une passion pour la création de solutions efficaces et impactantes.",
+  "VIEW MY WORK": "Voir mes travaux",
+  "MY SERVICES": "Mes services",
+  "Frontend Developer": "Développeur Frontend",
+  "I build high-performance web apps using Angular with responsive designs that work seamlessly on any device. From landing pages to complex web apps, I bring your ideas to life.": "Je crée des applications web performantes avec Angular et des designs responsives qui fonctionnent parfaitement sur tous les appareils. Des pages d’accueil aux applications complexes, je donne vie à vos idées.",
+  "Backend Developer": "Développeur Backend",
+  "I develop scalable and efficient backends for web applications, ensuring robust performance and seamless integration with your frontend and database systems.": "Je développe des backends évolutifs et efficaces pour les applications web, assurant des performances solides et une intégration fluide avec vos systèmes frontend et bases de données.",
+  "GIS Developer & Expert": "Développeur et expert SIG",
+  "I specialize in GIS web apps, improving existing systems, and creating Python GIS tools with ArcPy to provide tailored geospatial solutions.": "Je suis spécialisé dans les applications web SIG, l’amélioration des systèmes existants et la création d’outils SIG en Python avec ArcPy pour offrir des solutions géospatiales personnalisées.",
+  "SKILLS": "Compétences",
+  "The skills, tools and technologies i use :": "Compétences, outils et technologies que j’utilise :",
+  "Web Apps": "Applications Web",
+  "Python": "Python",
+  "ARCGIS": "SIG (ArcGIS)",
+  "Mobile Apps": "Applications mobiles",
+  "Contact Me": "Contactez-moi",
+  "RK Maps is a powerful web and mobile application for uploading urban data, creating interactive maps online, and offering advanced features like AI-driven building detection and real-time chat.": "RK Maps est une application web et mobile puissante pour le téléchargement de données urbaines, la création de cartes interactives en ligne, et proposant des fonctionnalités avancées comme la détection de bâtiments par IA et le chat en temps réel.",
+  "A web app for managing and visualizing geospatial data, built with React, Framer Motion, Node.js, Express, and MongoDB. It features a smooth, animated interface for an immersive user experience.": "Une application web pour gérer et visualiser des données géospatiales, construite avec React, Framer Motion, Node.js, Express et MongoDB. Elle offre une interface fluide et animée pour une expérience utilisateur immersive.",
+  "A 3D interactive portfolio built with React and Framer Motion, showcasing projects and skills through smooth animations and an immersive user experience.": "Un portfolio interactif en 3D construit avec React et Framer Motion, présentant projets et compétences à travers des animations fluides et une expérience utilisateur immersive.",
+  "Sallat Al-Mona is a dedicated online platform for selling Kuwaiti food products, offering a seamless shopping experience with authentic local flavors.": "Sallat Al-Mona est une plateforme en ligne dédiée à la vente de produits alimentaires koweïtiens, offrant une expérience d’achat fluide avec des saveurs locales authentiques.",
+  "A web-based cabin booking and management system for a hotel, where staff can track available cabins and manage reservations through an interactive map and custom-built widgets.": "Un système de réservation et gestion de cabines basé sur le web pour un hôtel, où le personnel peut suivre les cabines disponibles et gérer les réservations via une carte interactive et des widgets personnalisés.",
+  "Real Estate is a web platform for managing properties, showcasing listings with map integrations and advanced search features.": "Real Estate est une plateforme web pour gérer les propriétés, affichant les annonces avec intégration cartographique et fonctionnalités avancées de recherche.",
+  "Natours is a backend-powered travel booking platform built with Node.js, MongoDB, Express.js, and Pug.js, featuring secure payment options and seamless user experience.": "Natours est une plateforme de réservation de voyages avec backend, développée avec Node.js, MongoDB, Express.js et Pug.js, offrant des options de paiement sécurisées et une expérience utilisateur fluide.",
+  "Rentize is a real estate platform showcasing apartments for sale and rent, with features to display listings on a map and view nearby requests.": "Rentize est une plateforme immobilière présentant des appartements à vendre et à louer, avec des fonctionnalités d’affichage des annonces sur une carte et consultation des demandes à proximité.",
+  "Market API is a web platform utilizing ESRI APIs to locate branches, find the nearest routes, define service areas, and provide interactive dashboards.": "Market API est une plateforme web utilisant les API ESRI pour localiser des agences, trouver les itinéraires les plus proches, définir des zones de service et fournir des tableaux de bord interactifs.",
+  "This web project features a model for counting vehicles and calculating their speeds, all accessible online. Unlike desktop versions limited to users with the code and technical knowledge, this web-based solution allows anyone to upload and analyze their data easily.": "Ce projet web propose un modèle pour compter les véhicules et calculer leur vitesse, accessible en ligne. Contrairement aux versions desktop limitées aux utilisateurs techniques, cette solution web permet à quiconque de télécharger et d’analyser facilement ses données.",
+  "A React-based web GIS application using ArcGIS API and ArcGIS Online, featuring custom widgets to display and share specific map layers with clients.": "Une application SIG web basée sur React utilisant l’API ArcGIS et ArcGIS Online, avec des widgets personnalisés pour afficher et partager des couches cartographiques spécifiques avec les clients.",
+  "Moon is an online platform specializing in selling stylish and high-quality clothing, offering a seamless shopping experience for all.": "Moon est une plateforme en ligne spécialisée dans la vente de vêtements élégants et de haute qualité, offrant une expérience d’achat fluide pour tous.",
+
+  "This project uses Python and the OpenPyXL library to convert multiple Excel data sets into charts, automating the process of visualizing data within Excel for improved analysis and reporting.": "Ce projet utilise Python et la bibliothèque OpenPyXL pour convertir plusieurs ensembles de données Excel en graphiques, automatisant ainsi la visualisation des données dans Excel pour une meilleure analyse et des rapports améliorés.",
+
+  "Introducing \"Databases Collecting,\" a powerful tool for merging multiple databases into a single one, regardless of the number of features, with remarkable speed and efficiency.": "Présentation de \"Databases Collecting\", un outil puissant pour fusionner plusieurs bases de données en une seule, quel que soit le nombre de fonctionnalités, avec une rapidité et une efficacité remarquables.",
+
+  "Introducing \"Topology,\" a unique tool that enables self-clipping between features, a functionality not available in GIS. With a touch of AI, it not only identifies intersections but resolves them, offering a groundbreaking solution for topology management in GIS.": "Présentation de \"Topology\", un outil unique permettant le découpage automatique entre entités, fonctionnalité absente des SIG classiques. Grâce à une touche d’IA, il identifie non seulement les intersections mais les résout, offrant une solution révolutionnaire pour la gestion de la topologie dans les SIG.",
+
+  "This tool takes the path of a folder containing multiple KML files and aggregates them into a single SHP file, streamlining the conversion process for large datasets.": "Cet outil prend le chemin d’un dossier contenant plusieurs fichiers KML et les agrège en un seul fichier SHP, facilitant ainsi la conversion des grands ensembles de données.",
+
+  "This new ArcGIS tool integrates ArcPy with libraries like Exif, re, and OpenPyxl, enabling advanced analyses beyond traditional GIS capabilities. It bridges specialized external libraries with GIS to perform unique computations and seamlessly visualize results in ArcGIS. The tools first phase uses Python scripts to process data, later uploading points and associated images to ArcGIS Online for easy sharing and exploration.": "Ce nouvel outil ArcGIS intègre ArcPy avec des bibliothèques comme Exif, re et OpenPyxl, permettant des analyses avancées au-delà des capacités traditionnelles des SIG. Il relie des bibliothèques externes spécialisées aux SIG pour effectuer des calculs uniques et visualiser les résultats dans ArcGIS. La première phase utilise des scripts Python pour traiter les données, puis télécharge les points et images associées sur ArcGIS Online pour un partage et une exploration faciles.",
+
+  "Introducing a transformative tool that converts data from Orbits schema to the official Saudi Ministry of Planning schema on GIS, reducing a 1.5-day workload to just 3 minutes.": "Présentation d’un outil révolutionnaire qui convertit les données du schéma Orbits vers le schéma officiel du ministère saoudien de la Planification dans les SIG, réduisant une charge de travail de 1,5 jour à seulement 3 minutes.",
+  "2025-All rights reserved, web development-Raafat Kamel": "2025 - Tous droits réservés, développement web - Raafat Kamel"
+}
