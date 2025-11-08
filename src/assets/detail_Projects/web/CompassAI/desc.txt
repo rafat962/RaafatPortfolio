@@ -1,0 +1,5 @@
+dec:
+CompassAI is an intelligent geospatial chatbot web app built with React, Node.js, and MongoDB. Integrated with interactive mapping tools, it enables users to perform spatial queries, apply dynamic symbology, generate analytical reports, and visualize data through charts — all via a conversational interface that makes geospatial data analysis smarter and more intuitive.
+********************
+tech:
+(React.js - ReactQuery - nodejs - expressjs - mongodb - openModels)

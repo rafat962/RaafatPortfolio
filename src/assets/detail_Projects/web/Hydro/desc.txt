@@ -1,0 +1,5 @@
+dec:
+A web app for managing and visualizing geospatial data, built with React, Framer Motion, Node.js, Express, and MongoDB. It features a smooth, animated interface for an immersive user experience.
+********************
+tech:
+(React.js - ReactQuery - nodejs - expressjs - mongodb)

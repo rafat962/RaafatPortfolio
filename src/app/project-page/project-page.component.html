@@ -161,8 +161,8 @@
           class="grid grid-cols-1 md:grid-cols-2 gap-x-1 gap-y-5 w-full overflow-hidden"
         >
           <!-- front github-->
+          @if (project.fronendGit) {
           <a
-            *ngIf="project.fronendGit"
             [href]="project.fronendGit"
             target="_blank"
             class="flex items-center justify-start space-x-3 group"
@@ -179,6 +179,7 @@
               {{ project.fronendGit }}
             </span>
           </a>
+          }
           <!-- back github-->
           <a
             *ngIf="project.backendGit"

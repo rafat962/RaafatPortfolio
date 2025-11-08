@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, signal } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Matrial } from '../matrials';
 import { WEBProjectsService } from '../_service/wepProjects.service';
 import { ArcGisProjectsService } from '../_service/arc-gis-projects.service';
@@ -35,6 +35,7 @@ declare var $: any;
     FooterComponent,
     RouterModule,
     TranslateModule,
+    NgOptimizedImage,
   ],
   templateUrl: './hero-page.component.html',
   styleUrl: './hero-page.component.css',
@@ -73,10 +74,11 @@ export class HeroPageComponent implements OnInit {
     }
   }
   state = 'now';
-  currentLang: string = '';
+  // currentLang: string = '';
+  currentLang = signal('');
   private langChangeSub!: Subscription;
   ngOnInit(): void {
-    this.currentLang = JSON.parse(localStorage.getItem('lan')!) || 'en';
+    this.currentLang.set(JSON.parse(localStorage.getItem('lan')!) || 'en');
     AOS.init({
       offset: 0,
       duration: 600,
@@ -103,7 +105,7 @@ export class HeroPageComponent implements OnInit {
     // Subscribe to language change
     this.langChangeSub = this.translate.onLangChange.subscribe(
       (event: LangChangeEvent) => {
-        this.currentLang = event.lang;
+        this.currentLang.set(event.lang);
       }
     );
   }

@@ -7,7 +7,7 @@
     class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-2 xl:py-0"
   >
     <div
-      [ngClass]="currentLang === 'ar' ? 'xl:flex-row-reverse' : 'xl:flex-row'"
+      [ngClass]="currentLang() === 'ar' ? 'xl:flex-row-reverse' : 'xl:flex-row'"
       class="flex flex-col items-center justify-center md:justify-between w-[85vw] min-h-fit h-[calc(100vh-7.8rem)]"
     >
       <!-- text -->
@@ -19,16 +19,16 @@
         <div
           class="flex flex-col space-y-2 text-[3rem] md:text-[4.1rem] select-none"
         >
-          <h1 [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'" class="hf">
+          <h1 [dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'" class="hf">
             {{ "FULL STACK" | translate }}
           </h1>
-          <h1 [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'" class="hf">
+          <h1 [dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'" class="hf">
             {{ "DEVELOPER" | translate }}
           </h1>
         </div>
         <!-- me -->
         <p
-          [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+          [dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
           class="select-none max-w-[25rem] text-sm md:text-base dark:text-white text-black tracking-wide leading-6 text-center md:text-start"
         >
           <span class="text-blue-500">{{
@@ -54,7 +54,9 @@
       </div>
       <!-- image -->
       <div
-        [ngClass]="currentLang === 'ar' ? 'xl:justify-start' : 'xl:justify-end'"
+        [ngClass]="
+          currentLang() === 'ar' ? 'xl:justify-start' : 'xl:justify-end'
+        "
         class="w-[100vw] xl:w-[80vw] h-full flex items-center justify-center"
       >
         <img
@@ -71,7 +73,7 @@
     class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-14 md:py-24"
   >
     <div
-      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+      [ngClass]="currentLang() === 'ar' ? 'items-end' : 'items-start'"
       class="flex flex-col justify-start w-[85vw] h-fit space-y-14"
     >
       <!-- head -->
@@ -91,7 +93,7 @@
           class="w-full flex items-center z-10 dark:bg-prim bg-[#F2F2F2]"
         >
           <div
-            [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+            [ngClass]="currentLang() === 'ar' ? 'items-end' : 'items-start'"
             class="hover:dark:border-red-500 hover:border-blue-500 cursor-pointer hover:translate-x-1 hover:shadow-2xl hover:shadow-blue-500 hover:dark:shadow-red-500 select-none trans z-10 flex flex-col justify-start space-y-6 p-4 md:p-6 px-4 md:px-8 rounded-2xl border-2 border-gray-600 text-black dark:text-white w-full md:w-[48vw] bg-gradient-to-r from-white/5"
           >
             <div class="flex items-center justify-center space-x-4">
@@ -101,13 +103,13 @@
               </div>
               <!-- text -->
               <h1
-                [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+                [dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
                 class="text-2xl md:text-3xl text-wrap font-for font-bold text-blue-500"
               >
                 {{ card.header | translate }}
               </h1>
             </div>
-            <p [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'" class="max-w-xl">
+            <p [dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'" class="max-w-xl">
               {{ card.content | translate }}
             </p>
           </div>
@@ -128,7 +130,7 @@
     class="w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-6 md:py-24"
   >
     <div
-      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+      [ngClass]="currentLang() === 'ar' ? 'items-end' : 'items-start'"
       class="relative flex flex-col items-start justify-start w-[85vw] h-fit space-y-4 md:space-y-14"
     >
       <!-- head -->
@@ -143,7 +145,7 @@
         class="flex flex-col text-[#000000] dark:text-white w-full items-center justify-center space-y-5 md:space-y-8 select-none"
       >
         <h1
-          [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+          [dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
           class="text:xs md:text-xl tracking-widest"
         >
           {{ "The skills, tools and technologies i use :" | translate }}
@@ -223,7 +225,7 @@
     class="relative w-full h-full border-b-2 border-b-gray-600 flex items-center justify-center py-14 md:py-24"
   >
     <div
-      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+      [ngClass]="currentLang() === 'ar' ? 'items-end' : 'items-start'"
       class="relative flex flex-col items-start justify-start w-[85vw] h-full space-y-10"
     >
       <!-- head -->
@@ -254,12 +256,12 @@
           class="grid dr grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 md:grid-rows-3 xl:grid-rows-2 gap-8 h-full w-full overflow-auto"
         >
           <!-- card -->
+          @for (item of projects; track item.id) {
           <div
             data-aos="fade-down"
             data-aos-anchor-placement="top-bottom"
-            *ngFor="let item of projects"
             [routerLink]="['/project', item.category, item.id]"
-            class="card flex flex-col items-center space-y-4 justify-start rounded-xl overflow-hidden border-2 border-gray-500 cursor-pointer hover:shadow-2xl hover:shadow-for trans pb-8 bg-white dark:bg-prim w-full xl:w-[24vw]"
+            class="card flex flex-col items-center space-y-4 justify-start rounded-xl overflow-hidden border-2 border-gray-500 cursor-pointer hover:shadow-2xl hover:shadow-for transition-all duration-200 ease-in-out trans pb-8 bg-white dark:bg-prim w-full xl:w-[24vw]"
           >
             <!-- img -->
             <div class="w-full h-96 overflow-hidden object-cover">
@@ -290,6 +292,8 @@
               </div>
             </div>
           </div>
+
+          }
         </div>
         <!-- numbering -->
         <nav aria-label="Page navigation example">
@@ -333,7 +337,7 @@
     class="w-full h-fit border-b-2 border-b-gray-600 flex items-center justify-center py-8 md:py-10 xl:py-24"
   >
     <div
-      [ngClass]="currentLang === 'ar' ? 'items-end' : 'items-start'"
+      [ngClass]="currentLang() === 'ar' ? 'items-end' : 'items-start'"
       class="relative flex flex-col items-start justify-start w-[85vw] h-fit space-y-8 md:space-y-8 xl:space-y-14"
     >
       <!-- head -->

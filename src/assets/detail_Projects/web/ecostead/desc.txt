@@ -1,0 +1,5 @@
+dec:
+Ecostead is a full-stack real estate management platform built with React, Node.js, Express, and MongoDB. The frontend app provides an interactive map interface for exploring land plots and viewing detailed property information, while the backend app empowers administrators to update data, upload images, and efficiently manage land listings.
+********************
+tech:
+(React.js - ReactQuery )
