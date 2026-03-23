@@ -22,6 +22,7 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { N8nService } from '../_service/n8n.service';
 @Component({
   selector: 'app-project-page',
   standalone: true,
@@ -34,13 +35,13 @@ import { Subscription } from 'rxjs';
         'now',
         style({
           opacity: 0,
-        })
+        }),
       ),
       state(
         'new',
         style({
           opacity: 1,
-        })
+        }),
       ),
       transition('now <=> new', [animate('0.3s')]),
     ]),
@@ -54,8 +55,9 @@ export class ProjectPageComponent implements OnInit {
     private webProjects: WEBProjectsService,
     private pythonProject: PythonProjectsService,
     private arcgisProjects: ArcGisProjectsService,
+    private n8nProjects: N8nService,
     private mobileApps: MobileProjectsService,
-    private translate: TranslateService
+    private translate: TranslateService,
   ) {}
   state = 'now';
   currentLang: string = '';
@@ -66,7 +68,7 @@ export class ProjectPageComponent implements OnInit {
     this.langChangeSub = this.translate.onLangChange.subscribe(
       (event: LangChangeEvent) => {
         this.currentLang = event.lang;
-      }
+      },
     );
     AOS.init({
       offset: 0,
@@ -85,6 +87,8 @@ export class ProjectPageComponent implements OnInit {
         this.project = this.webProjects.getOne(+id);
       } else if (type === 'Python') {
         this.project = this.pythonProject.getOne(+id);
+      } else if (type === 'n8n') {
+        this.project = this.n8nProjects.getOne(+id);
       } else if (type === 'ArcGIS') {
         this.project = this.arcgisProjects.getOne(+id);
       } else if (type === 'Mobile_Apps') {
@@ -157,7 +161,7 @@ export class ProjectPageComponent implements OnInit {
       carouselElement,
       items,
       options,
-      instanceOptions
+      instanceOptions,
     );
   }
   back() {

@@ -24,6 +24,7 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { N8nService } from '../_service/n8n.service';
 declare var $: any;
 @Component({
   selector: 'app-hero-page',
@@ -45,13 +46,13 @@ declare var $: any;
         'now',
         style({
           opacity: 0,
-        })
+        }),
       ),
       state(
         'new',
         style({
           opacity: 1,
-        })
+        }),
       ),
       transition('now <=> new', [animate('0.3s')]),
     ]),
@@ -63,9 +64,10 @@ export class HeroPageComponent implements OnInit {
     private arcgisPro: ArcGisProjectsService,
     private pythonProjects: PythonProjectsService,
     private mobileAppsProjects: MobileProjectsService,
+    private n8nProjects: N8nService,
     private tost: ToastrService,
     private activeRoute: ActivatedRoute,
-    private translate: TranslateService
+    private translate: TranslateService,
   ) {}
   sctrolToProtoflio() {
     const element = document.getElementById('PORTFOLIO');
@@ -106,7 +108,7 @@ export class HeroPageComponent implements OnInit {
     this.langChangeSub = this.translate.onLangChange.subscribe(
       (event: LangChangeEvent) => {
         this.currentLang.set(event.lang);
-      }
+      },
     );
   }
   ngOnDestroy(): void {
@@ -166,6 +168,7 @@ export class HeroPageComponent implements OnInit {
     './assets/heroPage/logos/Python.png',
     './assets/heroPage/logos/NextJs.png',
     './assets/heroPage/logos/docker.svg',
+    './assets/heroPage/logos/n8n.png',
   ];
   projects: Project[] = [];
   listNum = 0;
@@ -194,6 +197,14 @@ export class HeroPageComponent implements OnInit {
           this.projects = this.pythonProjects.PythonProjects.slice(0, 6);
         }
         this.listNum = this.pythonProjects.PythonProjects.length;
+      } else if (type === 'n8n') {
+        this.currentType = type;
+        if (window.innerWidth < 767) {
+          this.projects = this.n8nProjects.n8nProjects.slice(0, 2);
+        } else {
+          this.projects = this.n8nProjects.n8nProjects.slice(0, 6);
+        }
+        this.listNum = this.n8nProjects.n8nProjects.length;
       } else if (type === 'ARCGIS') {
         this.currentType = type;
         if (window.innerWidth < 767) {
@@ -207,12 +218,12 @@ export class HeroPageComponent implements OnInit {
         if (window.innerWidth < 767) {
           this.projects = this.mobileAppsProjects.MobileAppsProjects.slice(
             0,
-            2
+            2,
           );
         } else {
           this.projects = this.mobileAppsProjects.MobileAppsProjects.slice(
             0,
-            6
+            6,
           );
         }
         this.listNum = this.mobileAppsProjects.MobileAppsProjects.length;
@@ -226,12 +237,12 @@ export class HeroPageComponent implements OnInit {
     if (window.innerWidth < 767) {
       return Array.from(
         { length: Math.ceil(count / 2) },
-        (_, index) => index + 1
+        (_, index) => index + 1,
       );
     } else {
       return Array.from(
         { length: Math.ceil(count / 6) },
-        (_, index) => index + 1
+        (_, index) => index + 1,
       );
     }
   }
@@ -260,10 +271,12 @@ export class HeroPageComponent implements OnInit {
         this.projects = this.pythonProjects.PythonProjects.slice(start, end);
       } else if (this.currentType === 'ARCGIS') {
         this.projects = this.arcgisPro.ArcGisProProjects.slice(start, end);
+      } else if (this.currentType === 'n8n') {
+        this.projects = this.n8nProjects.n8nProjects.slice(start, end);
       } else if (this.currentType === 'Mobile Apps') {
         this.projects = this.mobileAppsProjects.MobileAppsProjects.slice(
           start,
-          end
+          end,
         );
       }
 

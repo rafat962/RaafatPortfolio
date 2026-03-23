@@ -1,0 +1,9 @@
+Description:
+Male Fashion is a premium e-commerce platform dedicated to modern menswear, offering a high-performance shopping experience with real-time data synchronization and a seamless user interface.
+
+Tech Stack:
+(React.js - Tailwind CSS - Framer Motion - Supabase Auth & Database - Vite)
+
+Links:
+GitHub Frontend: https://github.com/rafat962/Male-Fashion.git
+Demo Video: (يمكنك إضافة رابط الفيديو هنا بمجرد رفعه)
