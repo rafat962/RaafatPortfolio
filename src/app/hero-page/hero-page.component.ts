@@ -157,6 +157,7 @@ export class HeroPageComponent implements OnInit {
     './assets/heroPage/logos/Firebase.png',
     './assets/heroPage/logos/Reactjs.png',
     './assets/heroPage/logos/ReactQuery.svg',
+    './assets/heroPage/logos/ASP.NET.webp',
   ];
   skilssRow2 = [
     './assets/heroPage/logos/ArcGIS Pro.png',
@@ -165,6 +166,7 @@ export class HeroPageComponent implements OnInit {
     './assets/heroPage/logos/MongoDB.svg',
     './assets/heroPage/logos/Express.js.png',
     './assets/heroPage/logos/sql-server.png',
+    './assets/heroPage/logos/langchain-color.webp',
     './assets/heroPage/logos/Python.png',
     './assets/heroPage/logos/NextJs.png',
     './assets/heroPage/logos/docker.svg',

@@ -1,0 +1,9 @@
+dec:
+SpotIn is an intelligent workspace management and automation platform built with React, .NET Core, and SQL Server. It enables venue owners to track active bookings in real time, view live floor previews, and manage dynamic billing and cafeteria orders—all unified in a seamless B2B dashboard.
+********************
+tech:
+(React.js - ReactQuery - nodejs - expressjs - mongodb - openModels)
+(React.js - .NET ASP.NET Core - EF Core - SQL Server - MongoDB - JWT)
+
+
+https://github.com/rafat962/SpotIN.git

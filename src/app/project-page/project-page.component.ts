@@ -110,6 +110,8 @@ export class ProjectPageComponent implements OnInit {
           x === 'BDCN Model'
         ) {
           return;
+        } else if (x === 'ASP.NET') {
+          this.skilssRow1.push(`./assets/heroPage/logos/${x}.webp`);
         } else {
           this.skilssRow1.push(`./assets/heroPage/logos/${x}.png`);
         }
